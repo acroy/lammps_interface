@@ -636,7 +636,13 @@ class MolecularGraph(nx.Graph):
                     self.nodes[label].update({'hybridization':'sp2'})
                 else:
                     self.nodes[label].update({'hybridization':'sp3'})
-
+            elif element == "B":
+                if self.degree(label) >= 4:
+                    self.nodes[label].update({'hybridization':'sp3'})
+                elif self.degree(label) == 3:
+                    self.nodes[label].update({'hybridization':'sp2'})
+                elif self.degree(label) <= 2:
+                    self.nodes[label].update({'hybridization':'sp'})
             else:
                 #default sp3
                 self.nodes[label].update({'hybridization':'sp3'})

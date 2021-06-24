@@ -24,6 +24,9 @@ from . import Molecules
 if sys.version_info < (3, 0):
     input = raw_input
 
+# to be removed #
+def test():
+    print('test')
 
 class LammpsSimulation(object):
     def __init__(self, options):

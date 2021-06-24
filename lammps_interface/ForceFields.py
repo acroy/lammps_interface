@@ -2480,7 +2480,7 @@ class UFF(ForceField):
 
     def detect_ff_terms(self):
         # for each atom determine the ff type if it is None
-        organics = ["C", "N", "O", "S"]
+        organics = ["C", "N", "O", "S", "B"]
         halides = ["F", "Cl", "Br", "I"]
         sqpl = ["He", "Ne", "Ar", "Ni", "Kr", "Pd", "Xe", "Pt", "Au", "Rn"]
 
@@ -3083,7 +3083,7 @@ class Dreiding(ForceField):
 
     def detect_ff_terms(self):
         # for each atom determine the ff type if it is None
-        organics = ["C", "N", "O", "S"]
+        organics = ["C", "N", "O", "S", "B"]
         halides = ["F", "Cl", "Br", "I"]
         electro_neg_atoms = ["N", "O", "F"]
         for node, data in self.graph.nodes_iter2(data=True):
@@ -3508,7 +3508,7 @@ class UFF4MOF(ForceField):
 
         """
         # for each atom determine the ff type if it is None
-        organics = ["C", "N", "O", "S"]
+        organics = ["C", "N", "O", "S", "B"]
         halides = ["F", "Cl", "Br", "I"]
         for node, data in self.graph.nodes_iter2(data=True):
             special = 'special_flag' in data
